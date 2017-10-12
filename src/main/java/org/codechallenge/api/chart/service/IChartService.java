@@ -19,5 +19,5 @@ public interface IChartService {
 	 * @param measures the measures to filter
 	 * @return categories and series of the given dimension
 	 */
-	ChartResponse generateChart(String dimension, List<String> measures);
+	ChartResponse queryMeasures(String dimension, List<String> measures);
 }

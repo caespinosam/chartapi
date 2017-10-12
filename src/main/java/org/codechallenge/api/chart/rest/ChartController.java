@@ -26,7 +26,7 @@ public class ChartController {
 
 	@RequestMapping(value = "/chart", method = RequestMethod.POST)
 	public ChartResponse chart(@Valid @RequestBody ChartRequest request) {
-		ChartResponse response = chartService.generateChart(request.getDimensions().get(0), request.getMeasures());
+		ChartResponse response = chartService.queryMeasures(request.getDimensions().get(0), request.getMeasures());
 		return response;
 	}
 }

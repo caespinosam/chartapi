@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.codec.Base64;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -32,11 +33,29 @@ public class ApiChartIntegrationTest {
 		String requestJson = "{\"dimensions\":[\"team\"],\"measures\":[\"champions\",\"leagues\", \"revenue\"]}";
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
+		String plainCreds = "user:user";
+		headers.add("Authorization", "Basic " + new
+				String(Base64.encode(plainCreds.getBytes())));
 		HttpEntity<String> httpEntity = new HttpEntity<String>(requestJson, headers);				
 		ChartResponse cr = restTemplate.postForObject(URL_CHART_API, httpEntity, ChartResponse.class);
 		Assert.assertFalse(cr.getCategories().isEmpty());
 		Assert.assertEquals(3, cr.getSeries().size());
 		Assert.assertTrue(cr.getCategories().contains("Real Madrid"));		
+	}
+	
+	@Test(expected = HttpClientErrorException.class)
+	public void test_chart_Error_When_Invalid_Credentials() {
+		
+		RestTemplate restTemplate = new RestTemplate();
+		String requestJson = "{\"dimensions\":[\"team\"],\"measures\":[\"champions\",\"leagues\", \"revenue\"]}";
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		String plainCreds = "user:user2";
+		headers.add("Authorization", "Basic " + new
+				String(Base64.encode(plainCreds.getBytes())));
+		HttpEntity<String> httpEntity = new HttpEntity<String>(requestJson, headers);				
+		restTemplate.postForObject(URL_CHART_API, httpEntity, ChartResponse.class);
+			
 	}
 	
 	@Test(expected = HttpClientErrorException.class)
