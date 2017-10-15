@@ -37,6 +37,7 @@ URL: http://localhost:8080/chartapi/statistics
 POST http://localhost:8080/chartapi/statistics
 Authorization: Basic YWRtaW46YWRtaW4=
 Content-Type: application/json
+
 {"last": 5, "timeUnit": "seconds", "mavgPoints": 3 }
 ```
 
