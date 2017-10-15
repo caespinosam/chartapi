@@ -40,9 +40,9 @@ Content-Type: application/json
 {"last": 5, "timeUnit": "seconds", "mavgPoints": 3 }
 ```
 
-###### Roles:
+###### Credentials and roles:
 
 ```
-user:user  for an User
-admin:admin for an Admin
+user:user  for  User role
+admin:admin for  Admin role
 ```
