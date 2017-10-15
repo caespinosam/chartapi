@@ -3,7 +3,14 @@ package org.codechallenge.api.statistics.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Series {
+/**
+ * 
+ * Part of the response body.
+ *  
+ * @author caespinosam
+ *
+ */
+public class StatisticsSeries {
 
 	private String name;
 	private List<Double> data = new ArrayList<>();

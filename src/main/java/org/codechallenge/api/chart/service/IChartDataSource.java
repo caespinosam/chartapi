@@ -1,14 +1,14 @@
 package org.codechallenge.api.chart.service;
 
-import org.codechallenge.api.chart.model.Dimension;
+import org.codechallenge.api.chart.model.ChartDimension;
 
 /**
- * Defines all the methods to retrieve data from a database.
+ * Defines all the methods to retrieve data from a datasource.
  * 
  * @author caespinosam
  *
  */
-public interface IChartDAO {
+public interface IChartDataSource {
 
 	/**
 	 * Retrieves all the data related to a dimension.
@@ -17,6 +17,6 @@ public interface IChartDAO {
 	 *            the dimension to filter.
 	 */
 
-	Dimension getDimensionData(String dimensionName);
+	ChartDimension getDimensionData(String dimensionName);
 
 }

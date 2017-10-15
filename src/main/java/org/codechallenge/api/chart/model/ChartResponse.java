@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Response body sent back to clients in JSON format.
+ * Response body sent back to clients.
  * 
  * @author caespinosam
  *
@@ -12,13 +12,13 @@ import java.util.List;
 public class ChartResponse {
 
 	private List<String> categories = new ArrayList<>();
-	private List<Series> series = new ArrayList<>();
+	private List<ChartSeries> series = new ArrayList<>();
 
 	public void addCategory(String c) {
 		categories.add(c);
 	}
 
-	public void addSeries(Series s) {
+	public void addSeries(ChartSeries s) {
 		series.add(s);
 	}
 
@@ -26,7 +26,7 @@ public class ChartResponse {
 		return categories;
 	}
 
-	public List<Series> getSeries() {
+	public List<ChartSeries> getSeries() {
 		return series;
 	}
 
@@ -34,7 +34,7 @@ public class ChartResponse {
 		this.categories = categories;
 	}
 
-	public void setSeries(List<Series> series) {
+	public void setSeries(List<ChartSeries> series) {
 		this.series = series;
 	}
 

@@ -7,6 +7,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * Secures the application with a Role Base authentication.
+ * @author caespinosam
+ *
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -21,11 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity hs) throws Exception {
 		hs.authorizeRequests()
-		.anyRequest().authenticated()
-			.antMatchers("/chartapi/chart").hasAnyRole("User", "Admin")
-			.antMatchers("/chartapi/statistics").hasRole("Admin")
+			.antMatchers("/chart").hasAnyRole("User", "Admin")
+			.antMatchers("/statistics").hasRole("Admin")
+			.anyRequest().authenticated()
 			.and().httpBasic()
-			//.and().requestCache().requestCache(new NullRequestCache())
 			.and().csrf().disable();
 	}
 

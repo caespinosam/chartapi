@@ -1,12 +1,10 @@
 package org.codechallenge.api.statistics.service;
 
-import org.codechallenge.api.chart.service.IChartService;
 import org.codechallenge.api.statistics.model.ETimeUnit;
 import org.codechallenge.api.statistics.model.StatisticsResponse;
 
 /**
- * An implementation of {@link IChartService}. It uses a DAO object to query
- * data from a data storage in order to build the final response.
+ * Defines all the methods to process statistics queries .
  * 
  * @author caespinosam
  *
@@ -14,10 +12,23 @@ import org.codechallenge.api.statistics.model.StatisticsResponse;
 
 public interface IStatisticsService {
 
+	/**
+	 * Increments the total request counter by 1 .	 
+	 */
 	public void registerRequest();
 
+	/**
+	 * Increments the total queries counter by 1 . 	
+	 */
 	public void registerQuery();
 
+	/**
+	 * Gets the statistics for a period.
+	 * @param timeUnit  seconds or minutes
+	 * @param last number of time units to query
+	 * @param mavgPoints simple moving average points
+	 * @return 
+	 */
 	public StatisticsResponse getStatistics(ETimeUnit timeUnit, int last, int mavgPoints);
 
 }

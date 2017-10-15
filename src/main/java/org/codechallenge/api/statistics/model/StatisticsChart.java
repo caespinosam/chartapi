@@ -3,14 +3,20 @@ package org.codechallenge.api.statistics.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.codechallenge.api.chart.model.Series;
+import org.codechallenge.api.chart.model.ChartSeries;
 
-public class Chart {
+/**
+ * Part of the response body. 
+ * Contains the calculated statistics for each datetime.
+ * @author caespinosam
+ *
+ */
+public class StatisticsChart {
 
 	private List<String> categories = new ArrayList<>();
-	private List<Series> series = new ArrayList<>();
+	private List<ChartSeries> series = new ArrayList<>();
 
-	public void addSeries(Series s) {
+	public void addSeries(ChartSeries s) {
 		series.add(s);
 	}
 
@@ -26,11 +32,11 @@ public class Chart {
 		this.categories = categories;
 	}
 
-	public List<Series> getSeries() {
+	public List<ChartSeries> getSeries() {
 		return series;
 	}
 
-	public void setSeries(List<Series> series) {
+	public void setSeries(List<ChartSeries> series) {
 		this.series = series;
 	}
 

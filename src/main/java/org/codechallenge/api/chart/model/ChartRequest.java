@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * Request body sent by clients in JSON format. 
+ * Request body sent by clients. 
  * 
  * @author caespinosam
  *

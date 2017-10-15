@@ -3,8 +3,15 @@ package org.codechallenge.api.statistics.model;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Contains the current totals of a datatime.
+ * It uses thread safe integers to ensure consistency. 
+ * @author caespinosam
+ *
+ */
 public class StatisticsEntry {
 
+	/** When the request or query was processed.*/
 	private LocalDateTime key;
 	private AtomicInteger totalRequests = new AtomicInteger(0);
 	private AtomicInteger totalQueries = new AtomicInteger(0);

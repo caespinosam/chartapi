@@ -1,10 +1,16 @@
 package org.codechallenge.api.statistics.model;
 
+/**
+ * Response body sent back to clients. It contains totals and  counters.
+ * 
+ * @author caespinosam
+ *
+ */
 public class StatisticsResponse {
 
 	private int totalRequests;
 	private int totalQueries;
-	private Chart chart = new Chart();
+	private StatisticsChart chart = new StatisticsChart();
 
 	public int getTotalRequests() {
 		return totalRequests;
@@ -22,11 +28,11 @@ public class StatisticsResponse {
 		this.totalQueries = totalQueries;
 	}
 
-	public Chart getChart() {
+	public StatisticsChart getChart() {
 		return chart;
 	}
 
-	public void setChart(Chart chart) {
+	public void setChart(StatisticsChart chart) {
 		this.chart = chart;
 	}
 

@@ -5,7 +5,7 @@
          monitoring="autodetect"
          dynamicConfig="true">
 
-    <cache name="dimensions"
+    <cache name="charts"
            maxElementsInMemory="50"
            eternal="false"
            overflowToDisk="false"

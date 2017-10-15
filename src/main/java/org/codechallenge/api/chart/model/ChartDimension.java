@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Part of the response body. 
  * A dimension to query. It contains multiple categories. 
  * 
  * @author caespinosam
  *
  */
-public class Dimension {
+public class ChartDimension {
 
 	private String name;
-	private List<Category> categories = new ArrayList<>();
+	private List<ChartCategory> categories = new ArrayList<>();
 
-	public Dimension(String name) {
+	public ChartDimension(String name) {
 		this.name = name;
 	}
 
-	public void addCategory(Category c) {
+	public void addCategory(ChartCategory c) {
 		categories.add(c);
 	}
 
@@ -26,7 +27,7 @@ public class Dimension {
 		return name;
 	}
 
-	public List<Category> getCategories() {
+	public List<ChartCategory> getCategories() {
 		return categories;
 	}
 

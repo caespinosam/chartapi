@@ -4,17 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Part of the response body. 
  * A category which consists of many measures and their values (e.g Real Madrid: leagues=20, champions=5) 
  * 
  * @author caespinosam
  *
  */
-public class Category {
+public class ChartCategory {
 
 	private String name;
 	private Map<String, Double> measures = new HashMap<>();
 
-	public Category(String name) {
+	public ChartCategory(String name) {
 		this.name = name;
 	}
 

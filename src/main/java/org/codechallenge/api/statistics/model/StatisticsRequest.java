@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 /**
- * Request body sent by clients in JSON format.
+ * Request body sent by clients.
  * 
  * @author caespinosam
  *

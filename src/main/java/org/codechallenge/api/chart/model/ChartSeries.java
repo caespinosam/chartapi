@@ -5,25 +5,26 @@ import java.util.List;
 
 
 /**
+ * Part of the response body. 
 * Values of a measure. 
 * @author caespinosam
 *
 */
-public class Series {
+public class ChartSeries {
 
-	private String measureName;
+	private String name;
 	private List<Double> data = new ArrayList<>();
 
 	public void addValue(Double value) {
 		data.add(value);
 	}
 
-	public String getMeasureName() {
-		return measureName;
+	public String getName() {
+		return name;
 	}
 
-	public void setMeasureName(String name) {
-		this.measureName = name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<Double> getData() {
